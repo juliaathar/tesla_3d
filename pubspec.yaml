@@ -38,6 +38,8 @@ dependencies:
   google_fonts:
   material_symbols_icons:
   model_viewer_plus:
+  o3d:
+  flutter_3d_controller:
 
 dev_dependencies:
   flutter_test:

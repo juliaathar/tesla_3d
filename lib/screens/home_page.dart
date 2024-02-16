@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
+import 'package:o3d/o3d.dart';
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,7 +12,29 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home>{
+  O3DController _controller = O3DController();
+
+
+
+  @override
+  void initState() {
+    super.initState();
+    animateCamera();
+  }
+
+  void animateCamera() async {
+    await Future.delayed(Duration(seconds: 2));
+    _controller.cameraOrbit(100, 300, 10);
+    await Future.delayed(Duration(seconds: 2));
+    _controller.cameraOrbit(4000, 20, 2000);
+    await Future.delayed(Duration(seconds: 1));
+    _controller.cameraOrbit(30, 200, 390);
+    await Future.delayed(Duration(seconds: 2));
+    _controller.cameraOrbit(1000, 2000, 30);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +60,8 @@ class _HomeState extends State<Home> {
             Container(
               width: 400,
               height: 350,
-              child: ModelViewer(
+              child: O3D(
+                cameraControls: false,
                 src: "assets/car.glb",
               ),
             ),
@@ -237,7 +262,7 @@ class _HomeState extends State<Home> {
                                 fontSize: 12,
                                 color: Color(0xffEFF1FE)
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -250,4 +275,6 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
+  
 }

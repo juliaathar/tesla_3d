@@ -86,6 +86,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_3d_controller:
+    dependency: "direct main"
+    description:
+      name: flutter_3d_controller
+      sha256: "4c2ca198974a04b688e48c527b162229bd05a5d12f96f1e0913a49aee7d6d68b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.1"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -176,6 +184,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.7.0"
+  o3d:
+    dependency: "direct main"
+    description:
+      name: o3d
+      sha256: "64e45cafa45db2a233f1c2f7187388d33c59b7f7d0fa46af1eb79e16a6936276"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0"
   path:
     dependency: transitive
     description:
